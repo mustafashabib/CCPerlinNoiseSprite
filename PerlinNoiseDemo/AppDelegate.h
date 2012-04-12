@@ -3,7 +3,7 @@
 //  PerlinNoiseDemo
 //
 //  Created by Mustafa Shabib on 4/11/12.
-//  Copyright We Are Mammoth 2012. All rights reserved.
+//  Copyright  2012. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

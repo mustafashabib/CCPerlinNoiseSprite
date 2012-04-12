@@ -1,14 +1,15 @@
 //
 //  HelloWorldLayer.m
-//  PerlinNoiseDemo
+//  
 //
-//  Created by Mustafa Shabib on 4/11/12.
-//  Copyright We Are Mammoth 2012. All rights reserved.
+//  Created by Mustafa Shabib on 4/5/12.
+//  Copyright Mustafa Shabib 2012. All rights reserved.
 //
 
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
+#import "PerlinNoiseSprite.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -34,75 +35,66 @@
 	return scene;
 }
 
+- (void)genBackground {
+    
+    [_background removeFromParentAndCleanup:YES];
+    [_label removeFromParentAndCleanup:YES];
+    [_menu removeFromParentAndCleanup:YES];
+    
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+
+    int octaves = CCRANDOM_0_1()*4+1;
+    _background = [PerlinNoiseSprite GenerateSprite:winSize.width :winSize.height :CCRANDOM_0_1()*85 :.8 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255:octaves];
+    
+    _background.position = ccp(winSize.width/2, winSize.height/2);        
+    ccTexParams tp = {GL_LINEAR, GL_LINEAR, GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE};
+    [_background.texture setTexParameters:&tp];
+    
+    [self addChild:_background];
+    // create and initialize a Label
+    _label = [CCLabelTTF labelWithString:@"Perlin Noise Test" fontName:@"Marker Felt" fontSize:64];
+    
+    // ask director the the window size
+    CGSize size = [[CCDirector sharedDirector] winSize];
+	
+    // position the label on the center of the screen
+    _label.position =  ccp( size.width /2 , size.height/2 );
+    
+    // add the label as a child to this Layer
+    [self addChild: _label];
+    
+    
+    
+       // Default font size will be 28 points.
+    [CCMenuItemFont setFontSize:28];
+     CCMenuItem *regen = [CCMenuItemFont itemWithString:@"Regen" block:^(id sender) {
+        [self genBackground];
+    }];
+    
+    _menu = [CCMenu menuWithItems:regen, nil];
+    
+    [_menu alignItemsHorizontallyWithPadding:20];
+    [_menu setPosition:ccp( size.width/2, size.height/2 - 50)];
+    
+    // Add the menu to the layer
+    [self addChild:_menu];
+
+    
+}
+
 // on "init" you need to initialize your instance
 -(id) init
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init])) {
-		
-		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
-		
-		
-		
-		//
-		// Leaderboards and Achievements
-		//
-		
-		// Default font size will be 28 points.
-		[CCMenuItemFont setFontSize:28];
-		
-		// Achievement Menu Item using blocks
-		CCMenuItem *itemAchievement = [CCMenuItemFont itemWithString:@"Achievements" block:^(id sender) {
-			
-			
-			GKAchievementViewController *achivementViewController = [[GKAchievementViewController alloc] init];
-			achivementViewController.achievementDelegate = self;
-			
-			AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-			
-			[[app navController] presentModalViewController:achivementViewController animated:YES];
-			
-			[achivementViewController release];
-		}
-									   ];
-
-		// Leaderboard Menu Item using blocks
-		CCMenuItem *itemLeaderboard = [CCMenuItemFont itemWithString:@"Leaderboard" block:^(id sender) {
-			
-			
-			GKLeaderboardViewController *leaderboardViewController = [[GKLeaderboardViewController alloc] init];
-			leaderboardViewController.leaderboardDelegate = self;
-			
-			AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-			
-			[[app navController] presentModalViewController:leaderboardViewController animated:YES];
-			
-			[leaderboardViewController release];
-		}
-									   ];
-		
-		CCMenu *menu = [CCMenu menuWithItems:itemAchievement, itemLeaderboard, nil];
-		
-		[menu alignItemsHorizontallyWithPadding:20];
-		[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
-		
-		// Add the menu to the layer
-		[self addChild:menu];
+        [self genBackground];
+       
 
 	}
 	return self;
 }
+
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
