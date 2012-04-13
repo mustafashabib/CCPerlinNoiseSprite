@@ -6,7 +6,6 @@
 //  Copyright 2012 . All rights reserved.
 //
 //  For now - generates a CCSprite using Perlin Noise
-//  Error in the way it calculates colors - sometimes get weird color spots. 
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"

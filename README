@@ -1,7 +1,6 @@
 mustafashabib[at]gmail[dot]com
 Mustafa Shabib
 Generate a CCSprite using Perlin Noise.
-Error in the way it calculates color value sometimes, leading to artifacts.
 
 -mustafa
 --------
