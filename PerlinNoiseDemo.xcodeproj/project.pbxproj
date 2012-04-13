@@ -129,6 +129,7 @@
 		71D9F83915365687003175F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9F83815365687003175F9 /* AppDelegate.m */; };
 		71D9F83C15365687003175F9 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9F83B15365687003175F9 /* HelloWorldLayer.m */; };
 		71D9F84C1537C330003175F9 /* CCSprite+PerlinNoiseSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9F84A1537C330003175F9 /* CCSprite+PerlinNoiseSprite.m */; };
+		71D9F8551537CE68003175F9 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 71D9F8541537CE68003175F9 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -388,6 +389,7 @@
 		71D9F83B15365687003175F9 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HelloWorldLayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		71D9F84A1537C330003175F9 /* CCSprite+PerlinNoiseSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCSprite+PerlinNoiseSprite.m"; sourceTree = "<group>"; };
 		71D9F84B1537C330003175F9 /* CCSprite+PerlinNoiseSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCSprite+PerlinNoiseSprite.h"; sourceTree = "<group>"; };
+		71D9F8541537CE68003175F9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +415,7 @@
 		71D9F6A815365683003175F9 = {
 			isa = PBXGroup;
 			children = (
+				71D9F8541537CE68003175F9 /* README */,
 				71D9F6C915365683003175F9 /* PerlinNoiseDemo */,
 				71D9F6B615365683003175F9 /* Frameworks */,
 				71D9F6B415365683003175F9 /* Products */,
@@ -879,6 +882,7 @@
 				71D9F6DE15365683003175F9 /* Icon@2x.png in Resources */,
 				71D9F6E115365683003175F9 /* iTunesArtwork in Resources */,
 				71D9F81715365687003175F9 /* ChangeLog in Resources */,
+				71D9F8551537CE68003175F9 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
