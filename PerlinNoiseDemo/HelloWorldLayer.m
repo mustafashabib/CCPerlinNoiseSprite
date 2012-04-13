@@ -9,7 +9,7 @@
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
-#import "PerlinNoiseSprite.h"
+#import "CCSprite+PerlinNoiseSprite.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -36,7 +36,6 @@
 }
 
 - (void)genBackground {
-    
     [_background removeFromParentAndCleanup:YES];
     [_label removeFromParentAndCleanup:YES];
     [_menu removeFromParentAndCleanup:YES];
@@ -44,7 +43,7 @@
     CGSize winSize = [CCDirector sharedDirector].winSize;
 
     int octaves = CCRANDOM_0_1()*4+1;
-    _background = [PerlinNoiseSprite GenerateSprite:winSize.width :winSize.height :CCRANDOM_0_1()*85 :.8 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255:octaves];
+    _background = [CCSprite spriteWithPerlinNoise:winSize.width :winSize.height :CCRANDOM_0_1()*85 :CCRANDOM_0_1():CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255 :CCRANDOM_0_1()*255:octaves];
     
     _background.position = ccp(winSize.width/2, winSize.height/2);        
     ccTexParams tp = {GL_LINEAR, GL_LINEAR, GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE};

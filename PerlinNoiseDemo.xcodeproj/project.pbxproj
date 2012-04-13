@@ -128,7 +128,7 @@
 		71D9F83615365687003175F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9F83515365687003175F9 /* main.m */; };
 		71D9F83915365687003175F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9F83815365687003175F9 /* AppDelegate.m */; };
 		71D9F83C15365687003175F9 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9F83B15365687003175F9 /* HelloWorldLayer.m */; };
-		71D9F844153656C0003175F9 /* PerlinNoiseSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9F842153656C0003175F9 /* PerlinNoiseSprite.m */; };
+		71D9F84C1537C330003175F9 /* CCSprite+PerlinNoiseSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9F84A1537C330003175F9 /* CCSprite+PerlinNoiseSprite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -386,8 +386,8 @@
 		71D9F83815365687003175F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		71D9F83A15365687003175F9 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		71D9F83B15365687003175F9 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HelloWorldLayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		71D9F842153656C0003175F9 /* PerlinNoiseSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinNoiseSprite.m; sourceTree = "<group>"; };
-		71D9F843153656C0003175F9 /* PerlinNoiseSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinNoiseSprite.h; sourceTree = "<group>"; };
+		71D9F84A1537C330003175F9 /* CCSprite+PerlinNoiseSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCSprite+PerlinNoiseSprite.m"; sourceTree = "<group>"; };
+		71D9F84B1537C330003175F9 /* CCSprite+PerlinNoiseSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCSprite+PerlinNoiseSprite.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,8 +446,8 @@
 		71D9F6C915365683003175F9 /* PerlinNoiseDemo */ = {
 			isa = PBXGroup;
 			children = (
-				71D9F842153656C0003175F9 /* PerlinNoiseSprite.m */,
-				71D9F843153656C0003175F9 /* PerlinNoiseSprite.h */,
+				71D9F84A1537C330003175F9 /* CCSprite+PerlinNoiseSprite.m */,
+				71D9F84B1537C330003175F9 /* CCSprite+PerlinNoiseSprite.h */,
 				71D9F83715365687003175F9 /* AppDelegate.h */,
 				71D9F83815365687003175F9 /* AppDelegate.m */,
 				71D9F83A15365687003175F9 /* HelloWorldLayer.h */,
@@ -989,7 +989,7 @@
 				71D9F83615365687003175F9 /* main.m in Sources */,
 				71D9F83915365687003175F9 /* AppDelegate.m in Sources */,
 				71D9F83C15365687003175F9 /* HelloWorldLayer.m in Sources */,
-				71D9F844153656C0003175F9 /* PerlinNoiseSprite.m in Sources */,
+				71D9F84C1537C330003175F9 /* CCSprite+PerlinNoiseSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1093,6 +1093,7 @@
 				71D9F84115365687003175F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
